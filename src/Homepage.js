@@ -10,9 +10,6 @@ const handleClick = () => {
 
 }
 
-const handleRegister = () => {
-
-}
 
 
   return (
