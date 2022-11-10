@@ -9,17 +9,14 @@ const handleClick = () => {
     navigate("/macros")
 
 }
-
-
-
   return (
     
 
       <div>
-    <Register />
+   
 
     <div> TracMac Homepage</div>
-    <button className="login"> Sign Up </button>
+    <button className="login" > Sign Up </button>
     <button className="login" onClick={handleClick}> Login </button>
 
     
