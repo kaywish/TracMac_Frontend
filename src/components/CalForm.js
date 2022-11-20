@@ -13,7 +13,9 @@ function CalForm() {
        placeholder='Add Carbs'/>
        <input type="number" name="fats" id="fats"
        placeholder='Add Fats'/>
-       </div> 
+       <input type="date" name="date" id="date" placeholder="Date"/>
+       <input type="submit" value="Add Macros"/>
+    </div> 
 </form>
     
 

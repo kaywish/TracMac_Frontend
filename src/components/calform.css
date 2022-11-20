@@ -1,3 +1,7 @@
 .cal-form {
-    text-align:center;
+	display: block;
+	margin: 15px;
+	position: relative;
+    text-align: center;
 }
+
