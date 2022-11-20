@@ -1,8 +1,15 @@
 import React from 'react'
 import "./calform.css" 
 
+
+
+
+
+
 function CalForm() {
   return (
+
+
 <form className="cal-form">
    <div className="form-inner">
        <input type="number" name="cal" id="cal"
