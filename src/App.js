@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import CalForm from "./components/CalForm"
+import "./App.css"
 function App() {
 
   const [calories, setCal] = useState([])
@@ -29,9 +30,9 @@ useEffect(() => {
 console.log("this is outside" ,food)
 
   return (
-   <div>
+   <div className="main-background">
 
-   <h1> TracMac </h1>
+  
 
    <div>
   <ul>
@@ -42,7 +43,7 @@ console.log("this is outside" ,food)
     </ul> 
 
 
-   </div>
+   </div> 
   
    <Header totalCal={totalCal} />
    <CalForm />

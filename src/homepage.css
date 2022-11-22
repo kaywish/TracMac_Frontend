@@ -4,7 +4,7 @@
  
 }
 
-body {
+.background{
     background-image: url("./Homepage-back.jpg") ;
     background-size: cover;
     height: 100vh;
@@ -32,7 +32,7 @@ body {
 
 }
 
-input {
+.log-input {
     border: none;
     background-color: rgb(229, 226, 226);
     height: 4em;
