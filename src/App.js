@@ -31,24 +31,18 @@ console.log("this is outside" ,food)
 
   return (
    <div className="main-background">
+   
+   <Header totalCal={totalCal} />
 
-  
+   <CalForm />
 
-   <div>
-  <ul>
+    <ul className="food-list">
     { food.map(food =>  ( 
       
       <li key={food.id} > {food.name} </li>
     ))}
     </ul> 
 
-
-   </div> 
-  
-   <Header totalCal={totalCal} />
-   <CalForm />
-  
-   
  
   </div>
   )
