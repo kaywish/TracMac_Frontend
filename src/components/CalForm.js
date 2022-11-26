@@ -4,6 +4,7 @@ import "./calform.css"
 import Header from "../components/Header"
 import App from "../App"
 
+
 let baseURL= "http://localhost:3001"
 
 const handleSubmit = (e) => {
@@ -35,7 +36,7 @@ function CalForm() {
   })
 
   return (
-
+<div>
 
 <form className="cal-form" onSubmit={handleSubmit}>
    <div className="form-inner">
@@ -49,12 +50,12 @@ function CalForm() {
        placeholder='Add Carbs'/>
        <input type="number" name="fats" id="fats"
        placeholder='Add Fats'/>
-       <input type="date" name="date" id="date" placeholder="Date"/>
        <input type="submit" value="Add Macros"/>
     </div> 
 </form>
     
-
+    
+</div>
 
   )
 }

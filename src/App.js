@@ -28,6 +28,11 @@ useEffect(() => {
   
 }, []);
 
+useEffect (() => {
+  const total = food.reduce((foo,cal) => foo + cal.calories, 0)
+  setTotalCal(total)
+}, [food])
+
 
 console.log("this is outside" ,food)
 
@@ -42,15 +47,19 @@ console.log("this is outside" ,food)
     <ul className="cal-list">
     { food.map(food =>  ( 
       <>
-      <li className="cal-item" key={food.id} > Name: {food.name} |  Calories: {food.calories} </li>
+      <li className="cal-item" key={food.id} > Name: {food.name} |  Calories: {food.calories} |
+     </li>
  
       </>
 
     ))}
     </ul> 
 
+  
+   
+</div>
  
-  </div>
+  
   )
 }
 
