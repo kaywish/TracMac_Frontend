@@ -8,11 +8,11 @@ function App() {
   const [totalCal, setTotalCal] = useState(0)
   const [food, setFood] = useState([])
 
-let baseUrl= "http://localhost:3001"
+let baseURL= "http://localhost:3001"
 
 // Fetching from the backend
 const foods = () => {
-  fetch(baseUrl + "/food")
+  fetch(baseURL + "/food")
   .then(res => {
     return res.json()
     .then(data => {
@@ -25,7 +25,9 @@ const foods = () => {
 
 useEffect(() => {
   foods();
+  
 }, []);
+
 
 console.log("this is outside" ,food)
 
@@ -34,12 +36,16 @@ console.log("this is outside" ,food)
    
    <Header totalCal={totalCal} />
 
-   <CalForm />
+   <CalForm totalCal={totalCal} 
+   calories = {calories}/>
 
-    <ul className="food-list">
+    <ul className="cal-list">
     { food.map(food =>  ( 
-      
-      <li key={food.id} > {food.name} </li>
+      <>
+      <li className="cal-item" key={food.id} > Name: {food.name} |  Calories: {food.calories} </li>
+ 
+      </>
+
     ))}
     </ul> 
 

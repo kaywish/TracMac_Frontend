@@ -5,5 +5,28 @@
     text-align: center;
 }
 
+.cal-form:after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	background-image: linear-gradient(to right, var(--primary), var(--secondary));
+	border-radius: 10px;
+	transition: 0.2s;
+}
+
+.form-inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	transition: 0.4s;
+	border-radius: 8px;
+}
+
+
 
 

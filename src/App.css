@@ -7,6 +7,22 @@
 
 }
 
-.food-list {
-  color: white;
+
+.cal-list {
+	padding: 15px;
+}
+
+.cal-list .cal-item {
+	position: relative;
+	padding: 10px 15px;
+	background-color: #FFF;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	display: flex;
+	transition: 0.4s;
+	padding-left: 75px;
+}
+
+.cal-list .cal-item  {
+	flex: 1 1 100%;
 }
