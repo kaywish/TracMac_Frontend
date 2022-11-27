@@ -14,7 +14,7 @@ const handleSubmit = (e) => {
     body: JSON.stringify({
      name: e.target.name.value,
      calories: e.target.cal.value,
-     protien: e.target.protein.value,
+     protein: e.target.protein.value,
      carbohydrate: e.target.carbs.value,
      fat: e.target.fats.value
   }),
@@ -31,9 +31,6 @@ const handleSubmit = (e) => {
 
 function CalForm() {
 
-  useEffect(() => {
-   
-  })
 
   return (
 <div>
@@ -45,7 +42,7 @@ function CalForm() {
        <input type="number" name="cal" id="cal"
        placeholder='Add Calories'/>
        <input type ="number" name="protein" id="protein"
-       placeholder="Add Protien"/>
+       placeholder="Add Protein"/>
        <input type = "number" name="carbs" id="carbs"
        placeholder='Add Carbs'/>
        <input type="number" name="fats" id="fats"
@@ -53,6 +50,7 @@ function CalForm() {
        <input type="submit" value="Add Macros"/>
     </div> 
 </form>
+
     
     
 </div>
