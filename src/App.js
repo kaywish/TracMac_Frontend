@@ -12,6 +12,8 @@ function App() {
   const [calories, setCal] = useState([])
   const [totalCal, setTotalCal] = useState(0)
   const [totalPro, setTotalPro] = useState(0)
+  const [totalCarb, setTotalCarb] = useState(0)
+  const [totalFat, setTotalFat] = useState(0)
   const [food, setFood] = useState([])
   const [buttonPopup, setButtonPopup] = useState(false)
 
@@ -63,6 +65,16 @@ useEffect (() => {
   setTotalPro(total)
 }, [food])
 
+useEffect (() => {
+  const total = food.reduce((food,carb) => food + carb.carbohydrate, 0)
+  setTotalCarb(total)
+}, [food])
+
+useEffect (() => {
+  const total = food.reduce((food,fat) => food + fat.fat, 0)
+  setTotalFat(total)
+}, [food])
+
 
 // console.log("this is outside" ,food)
 
@@ -70,7 +82,9 @@ useEffect (() => {
    <div className="main-background">
    
    <Header totalCal={totalCal}
-   totalPro={totalPro} />
+   totalPro={totalPro}
+   totalCarb={totalCarb} 
+   totalFat={totalFat}/>
 
    <CalForm totalCal={totalCal} 
    calories = {calories}
@@ -85,9 +99,11 @@ useEffect (() => {
     <ul className="cal-list">
     { food.map(food =>  ( 
       <>
-      <li className="cal-item" key={food.id} > Name: {food.name} |  Calories: {food.calories} | Protein:  {food.protein} 
-       
-      <h4>  <Link to={`/edit/${food._id}`} > Edit </Link>  </h4>
+      <li className="cal-item" key={food.id} > Name: {food.name} |  Calories: {food.calories} | Protein:  {food.protein} | Carbs: {food.carbohydrate} | Fats: {food.fat} |
+
+      <div className="link-name">
+      <h4>  <Link to={`/edit/${food._id}`} > Edit </Link>  </h4> 
+      </div>
       
       <button onClick={(e)=> handleDelete(food._id)}> Delete </button>
      </li>
