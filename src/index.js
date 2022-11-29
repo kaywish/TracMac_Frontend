@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './Homepage';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import EditForm from './components/EditForm';
+import { BrowserRouter,Routes,Route , Link} from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
     <Routes>
     <Route path ="/" element = {< Homepage />} />
     <Route path ="/macros" element = {<App/>} />
+    <Route path ="/edit/:id" element = {<EditForm/>} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

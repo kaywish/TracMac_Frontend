@@ -1,14 +1,39 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import "./calform.css" 
 import Header from "../components/Header"
 import App from "../App"
+import { FontDownloadSharp } from '@material-ui/icons'
+
+function CalForm() {
+
+  const [food, setFood] = useState([])
 
 
 let baseURL= "http://localhost:3001"
 
+
+
+const foods = () => {
+  fetch(baseURL + "/food")
+  .then(res => {
+    return res.json()
+    .then(data => {
+      setFood(data.food)
+      console.log(data.food)
+      
+    })
+  })
+}
+
+
+
+useEffect(() => {
+  foods();
+  
+}, []);
+
 const handleSubmit = (e) => {
-  e.preventDefault()
   fetch(baseURL + '/food', {
     method: 'POST',
     body: JSON.stringify({
@@ -22,14 +47,16 @@ const handleSubmit = (e) => {
       'Content-Type': 'application/json'
     }
   }).then (res => res.json())
+    foods()
     .then (resJson => {
       console.log('NewForm - resJson', resJson)
+   
+      
      
   })
 }
 
 
-function CalForm() {
 
 
   return (

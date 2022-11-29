@@ -15,12 +15,11 @@ let baseURL= "http://localhost:3001"
 
     const handleLogin = (e) => {
       e.preventDefault()
-      console.log("eTarget", e.target.username.value, e.target.email.value, e.target.password.value)
-      console.log(baseURL)
-      fetch(baseURL + '/signin', {
+      console.log("eTarget", e.target.email.value, e.target.password.value)
+      console.log(e.target.email.value)
+      fetch(baseURL + '/users/signin', {
         method: 'POST',
         body: JSON.stringify({
-          username: e.target.username.value,
           email: e.target.email.value,
           password: e.target.password.value
         }),
@@ -28,6 +27,7 @@ let baseURL= "http://localhost:3001"
           'Content-Type': 'application/json'
         }
       }).then(res => {
+        console.log(res)
         if (res.ok) return res.json()
         console.log(res)
       })
@@ -49,6 +49,7 @@ let baseURL= "http://localhost:3001"
     <input className="log-input" type="text" placeholder="E-mail" />
     <input className="log-input" type="password" placeholder="Password" />
     <div className="login-btn" onClick={handleLogin}> Login </div>
+    <div className="login-btn"> Register </div>
       
 
     
